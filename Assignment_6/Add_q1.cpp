@@ -1,0 +1,19 @@
+   pair<Node*, Node*> splitList(Node *head) { 
+    Node *slow = head; 
+    Node *fast = head; 
+    
+    if(head == nullptr) 
+        return {nullptr, nullptr};    
+    while(fast->next != head && 
+          fast->next->next != head) { 
+        fast = fast->next->next; 
+        slow = slow->next; 
+    } 
+    if(fast->next->next == head) 
+        fast = fast->next; 
+    Node* head1 = head; 
+    Node* head2 = slow->next; 
+    fast->next = slow->next; 
+    slow->next = head; 
+    return {head1, head2};
+} 
