@@ -25,4 +25,5 @@ int main(){
     cout<<binarySearch(arr, 10, k) << endl;
    
 
+
 }
